@@ -71,8 +71,12 @@ n_mc <- 10000
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ### Define path
 data_dir <- "~/../../capstone/climatree/raw_data/"
-output_dir <- "~/../../capstone/climatree/output/1-process-raw-data/"
+output_dir <- "~/../../capstone/climatree/raw_data/"
 
+essential <- read_csv(paste0(output_dir, 'essentialcwd_data.csv'))
+
+max(essential$tmean)
+mean(essential$tmean)
 # 1. Site-level regressions
 flm_df <- read_csv(paste0(output_dir, 'site_pet_cwd_std.csv'))
 
@@ -950,16 +954,16 @@ spp_predictions <- sp_predictions %>%
 ### Map of ITRDB sites and species range
 
 # Pull relevant range map
-#sp_range <- range_sf %>% 
-  #filter(sp_code == spp_code)
-#sp_bbox <- st_bbox(sp_range)
+sp_range <- range_sf %>% 
+  filter(sp_code == spp_code)
+sp_bbox <- st_bbox(sp_range)
 
-#lon_lims <- c(sp_bbox$xmin - 1, sp_bbox$xmax + 1)
-#lat_lims <- c(sp_bbox$ymin - 1, sp_bbox$ymax + 1)
+lon_lims <- c(sp_bbox$xmin - 1, sp_bbox$xmax + 1)
+lat_lims <- c(sp_bbox$ymin - 1, sp_bbox$ymax + 1)
 
 # Plot species ranges
-#world <- ne_coastline(scale = "medium", returnclass = "sf")
-#map <- ggplot(trim_df, aes(x = Longitude, y = Latitude))
+world <- ne_coastline(scale = "medium", returnclass = "sf")
+map <- ggplot(trim_df, aes(x = Longitude, y = Latitude))
 
 #===============================================================================
 # Step 5: Prediction of sensitivity  ---------
@@ -1059,7 +1063,6 @@ coord_sf(xlim = lon_lims, ylim = lat_lims, expand = FALSE) +
         legend.title=element_text(size=base_text_size - 2),
         legend.text=element_text(size=base_text_size - 4))
 rwi_map
-
 ```
 
 

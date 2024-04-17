@@ -513,7 +513,7 @@ n_mc <- 10000
 # Define path
 data_dir <- "~/../../capstone/climatree/raw_data/"
 output_dir1 <- "~/../../capstone/climatree/output/1-process-raw-data/"
-
+# ouput_dir2 <- wherever the saved files from the first script are stored 
 
 # Create output directories
 #out_dir <- paste0(wdir,"2_output/predictions/")
@@ -1082,10 +1082,6 @@ spp_predictions <- sp_predictions %>%
     #spp_predictions <- spp_predictions %>% 
       #mutate(cwd_change = cwd_cmip_end_mean - cwd_cmip_start_mean,
              #pet_change = pet_cmip_end_mean - pet_cmip_start_mean)
-    
-    
-   
-    
     
     
     #cwd_change_map <- ggplot() +
