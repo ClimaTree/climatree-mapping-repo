@@ -14,7 +14,6 @@
 # Output files:
 # - combined_predictions.csv: final predictions for all species
 #
-#
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # Load necessary libraries

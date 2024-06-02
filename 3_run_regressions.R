@@ -446,6 +446,5 @@ write_rds(boot_df, paste0(output_dir, "ss_bootstrap_", species, ".rds"))
 
 print(paste0("Processing of tree species ", species, " is complete."))
 
-
 }
 
