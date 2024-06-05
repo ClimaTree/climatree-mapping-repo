@@ -1,5 +1,7 @@
 # Mapping Repository 🌲
-Repository for data wrangling and spatial analysis
+Repository for data wrangling and spatial analysis of tree species sensitivity ranges.
+
+This repository creates 26 species-specific tables containing drought sensitivity data across a species range. The existing workflow will be integrated into a function that divides a global aggregate into species-level estimates and then automates the mathematical processes needed to calculate sensitivity across each species range.
 
 * to access original scripts before modification by this project, vist Treeconomics GitHub Repository: https://github.com/rheilmayr/Treeconomics
 
