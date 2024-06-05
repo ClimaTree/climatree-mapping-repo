@@ -51,6 +51,13 @@ Definitions of key terms:
 
 **create_top_species.R** --> provides code for how we selected the most sampled species (by number of trees in the ITRDB)
 
+
+To recreate our data, please refer to our [Github page](https://github.com/ClimaTree/climatree-mapping-repo).
+
+To access our data, please refer to our [Dryad webpage](https://datadryad.org/stash/dataset/doi:10.5061/dryad.m905qfv97)
+
+To access our technical documentation, please refer to our [Bren Webpage](https://bren.ucsb.edu/projects/mapping-tree-species-drought-sensitivity-under-climate-change)
+
 ## Repository Structure: 🍂
 ```
 climatree-mapping-repo
