@@ -29,8 +29,20 @@ Definitions of key terms:
 
 **Coupled Model Intercomparison Project Phase 5 (CMIP5):** An ensemble of climate prediction models used to predict CWD change between historic (1970-2000) and end-of-century (2090-2100)  
 
+## Repository Structure: 🍂
+```
+climatree-mapping-repo
+├── main.R
+├── 1_climate_niche.R
+├── 2_plot_level_regressions.R
+├── 3_run_regressions.R
+├── 4_sens_predictions.R
+├── 5_mapping.R
+└── create_top_species.R
+
+```
 ## About the Scripts
-#### This repository has 7 Rmarkdown files (scripts 1-5 were modified from ongoing research by Dr. Joan Dudney, Dr. Robert Heilmeyer and Dr. Frances C. Moore): 🍃
+### This repository has 7 Rmarkdown files (scripts 1-5 were modified from ongoing research by Dr. Joan Dudney, Dr. Robert Heilmeyer and Dr. Frances C. Moore): 🍃
 
 * Scripts must be run in numerical order, as the outputs from the previous scripts are used in later scripts as inputs
 
@@ -58,16 +70,3 @@ To recreate our data, please refer to our [Github page](https://github.com/Clima
 To access our data, please refer to our [Dryad webpage](https://datadryad.org/stash/dataset/doi:10.5061/dryad.m905qfv97)
 
 To access our technical documentation, please refer to our [Bren Webpage](https://bren.ucsb.edu/projects/mapping-tree-species-drought-sensitivity-under-climate-change)
-
-## Repository Structure: 🍂
-```
-climatree-mapping-repo
-├── main.R
-├── 1_climate_niche.R
-├── 2_plot_level_regressions.R
-├── 3_run_regressions.R
-├── 4_sens_predictions.R
-├── 5_mapping.R
-└── create_top_species.R
-
-```
