@@ -3,7 +3,7 @@
 # Project: Mapping Tree Species' Drought Sensitivity Under Climate Change
 # Institution: Bren School of Environmental Science & Management - UCSB
 # Date: 2024-06-07
-# Purpose: Map species sensitivity and growth
+# Purpose: Map species CWD sensitivity and RWI
 #
 # Input files:
 # - site_pet_cwd_std_augmented (species specific)
