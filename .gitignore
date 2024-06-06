@@ -7,4 +7,5 @@
 data/
 *.csv
 */*.csv
-fm_scratch/
+scratch/
+range_26.jpeg
