@@ -20,9 +20,7 @@ library(ggplot2)
 library(terra)
 library(tidyterra)
 library(leaflet)
-library(raster)
 library(leafem)
-
 
 
 #===============================================================================
@@ -59,8 +57,8 @@ for (i in unique(combined_pred_raw$sp_code)) {
     mutate(sens_level = factor(sens_level,
                                levels = c("High Sensitivity", "Moderate Sensitivity", 
                                           "Low Sensitivity", "Least Concern"), ordered = TRUE)) %>% 
-    left_join(meta_df, join_by(sp_code)) %>% 
-    dplyr::select(all_of(c("longitude", "latitude", "drought_sens", 
+    left_join(meta_df, join_by(sp_code)) %>%
+    dplyr::select(all_of(c("longitude", "latitude", "drought_sens",
                     "sens_level", "sp_code", "scientific_name", "common_name")))
   
   combined_pred <- rbind(combined_pred, single_spp)
@@ -89,25 +87,26 @@ single_spp <- combined_pred %>%
 
 # create raster
 rast <- tidyterra::as_spatraster(single_spp, crs = "+proj=longlat +datum=WGS84")
-rast <- raster::raster(rast)
+rast <- stars::st_as_stars(rast)
 
-# plot in leaflet
+
 if(species %in% all_neg_code){
   leaflet() %>% 
     addTiles() %>% 
-    addRasterImage(x = rast, colors = c("#8c2f0e", "#E7844C", "#F0b28F"),
-                   opacity = 0.8) %>% 
-    addLegend(colors = c("#8c2f0e", "#E7844C", "#F0b28F"),
+    addStarsImage(rast, colors = c("#8C2F0E", "#E7844C", "#F0B28F"),
+                  opacity = 0.8, project = TRUE) %>% 
+    addLegend(colors = c("#8C2F0E", "#E7844C", "#F0B28F"),
               labels = c("High", "Moderate", "Low"),
               values = values(rast),
               title = "Drought Sensitivity")
 } else {
   leaflet() %>% 
     addTiles() %>% 
-    addRasterImage(rast,  colors = c("#8c2f0e", "#E7844C", "#F0b28F", "#144D6F"),
-                   opacity =  0.8) %>% 
-    addLegend(colors = c("#8c2f0e", "#E7844C", "#F0b28F", "#144D6F"),
+    addStarsImage(rast, colors = c("#8C2F0E", "#E7844C", "#F0B28F", "#144D6F"),
+                  opacity = 0.8, project = TRUE) %>% 
+    addLegend(colors = c("#8C2F0E", "#E7844C", "#F0B28F", "#144D6F"),
               labels = c("High", "Moderate", "Low", "Least Concern"),
               values = values(rast),
               title = "Drought Sensitivity")
 }
+
